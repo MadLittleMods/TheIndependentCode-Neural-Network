@@ -2,13 +2,34 @@
 
 This code is part of my video series on YouTube: [Neural Network from Scratch | Mathematics & Python Code](https://youtube.com/playlist?list=PLQ4osgQ7WN6PGnvt6tzLAVAEMsL3LBqpm).
 
-# Try it!
 
-```
-python3 xor.py
+## Setup
+
+```sh
+poetry install
 ```
 
-# Example
+## Try it!
+
+XOR example:
+
+```sh
+poetry run python xor.py
+```
+
+MNIST example:
+
+```sh
+poetry run python mnist.py
+```
+
+MNIST convolutional example:
+
+```sh
+poetry run python mnist_conv.py
+```
+
+## Example
 
 ```python
 import numpy as np

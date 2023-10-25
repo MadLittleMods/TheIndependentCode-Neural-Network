@@ -1,6 +1,6 @@
 import numpy as np
+import keras
 from keras.datasets import mnist
-from keras.utils import np_utils
 
 from dense import Dense
 from convolutional import Convolutional
@@ -17,7 +17,7 @@ def preprocess_data(x, y, limit):
     x, y = x[all_indices], y[all_indices]
     x = x.reshape(len(x), 1, 28, 28)
     x = x.astype("float32") / 255
-    y = np_utils.to_categorical(y)
+    y = keras.utils.to_categorical(y)
     y = y.reshape(len(y), 2, 1)
     return x, y
 
