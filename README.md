@@ -5,9 +5,12 @@ This code is part of my video series on YouTube: [Neural Network from Scratch | 
 
 ## Setup
 
-```sh
-poetry install
-```
+ 1. Have Python 3.11+ installed
+ 1. Install [Poetry](https://python-poetry.org/docs/#installation)
+ 1. Install dependencies:
+    ```sh
+    poetry install
+    ```
 
 ## Try it!
 
