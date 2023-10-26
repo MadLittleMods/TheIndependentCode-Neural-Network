@@ -1,6 +1,7 @@
 import numpy as np
 from layer import Layer
 from activation import Activation
+import logging
 
 class Tanh(Activation):
     def __init__(self):
@@ -32,6 +33,9 @@ class Softmax(Layer):
     def backward(self, output_gradient, learning_rate):
         # This version is faster than the one presented in the video
         n = np.size(self.output)
+        logging.error("\tSoftmax backward: asdf %s", (np.identity(n) - self.output.T) * self.output)
+        logging.error("\tSoftmax backward: output_gradient %s", output_gradient)
+        logging.error("\tSoftmax backward: result %s", np.dot((np.identity(n) - self.output.T) * self.output, output_gradient))
         return np.dot((np.identity(n) - self.output.T) * self.output, output_gradient)
         # Original formula:
         # tmp = np.tile(self.output, n)

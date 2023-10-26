@@ -1,3 +1,5 @@
+import logging
+
 def predict(network, input):
     output = input
     for layer in network:
@@ -16,8 +18,11 @@ def train(network, loss, loss_prime, x_train, y_train, epochs = 1000, learning_r
 
             # backward
             grad = loss_prime(y, output)
+            layer_index = len(network) - 1
             for layer in reversed(network):
+                logging.error("layer %s", layer_index)
                 grad = layer.backward(grad, learning_rate)
+                layer_index -= 1
 
         error /= len(x_train)
         if verbose:
